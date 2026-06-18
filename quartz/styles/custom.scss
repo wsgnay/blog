@@ -135,6 +135,7 @@ button {
   display: flex;
   align-items: end;
   padding: clamp(1.4rem, 4vw, 3.4rem);
+  container-type: inline-size;
   background:
     linear-gradient(90deg, rgba(7, 11, 16, 0.94) 0%, rgba(7, 11, 16, 0.68) 42%, rgba(7, 11, 16, 0.12) 100%),
     url("/static/pound-hero.png") center / cover;
@@ -159,6 +160,7 @@ button {
 }
 
 .hero-copy {
+  width: 100%;
   max-width: 980px;
   animation: hero-rise 720ms ease-out both;
 }
@@ -192,7 +194,7 @@ button {
   display: flex;
   align-items: baseline;
   gap: clamp(0.15rem, 1vw, 0.6rem);
-  width: min-content;
+  width: 100%;
   max-width: 100%;
   margin: 0.4rem 0 0.85rem;
   color: #f8e28d;
@@ -217,17 +219,30 @@ button {
 }
 
 .money-symbol {
-  font-size: clamp(3.6rem, 11vw, 10rem);
+  flex: 0 0 auto;
+  font-size: clamp(3.6rem, 9cqw, 7rem);
   line-height: 0.8;
   font-weight: 900;
 }
 
 .money-number {
-  font-size: clamp(4.2rem, 13.6vw, 13rem);
+  min-width: 0;
+  flex: 1 1 auto;
+  font-size: clamp(4.2rem, 13cqw, 8.2rem);
   line-height: 0.78;
   font-weight: 900;
   letter-spacing: 0;
   white-space: nowrap;
+}
+
+@supports not (font-size: 1cqw) {
+  .money-symbol {
+    font-size: clamp(3.4rem, 7vw, 6rem);
+  }
+
+  .money-number {
+    font-size: clamp(4rem, 9vw, 7rem);
+  }
 }
 
 .hero-copy h1 {
