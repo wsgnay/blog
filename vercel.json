@@ -1,5 +1,6 @@
 {
   "buildCommand": "npx quartz plugin install && npx quartz build",
   "outputDirectory": "public",
-  "installCommand": "npm ci"
+  "installCommand": "npm ci",
+  "cleanUrls": true
 }
