@@ -137,7 +137,7 @@ button {
   padding: clamp(1.4rem, 4vw, 3.4rem);
   background:
     linear-gradient(90deg, rgba(7, 11, 16, 0.94) 0%, rgba(7, 11, 16, 0.68) 42%, rgba(7, 11, 16, 0.12) 100%),
-    url("/static/blog-hero.png") center / cover;
+    url("/static/pound-hero.png") center / cover;
   box-shadow: 0 32px 120px rgba(0, 0, 0, 0.4);
 }
 
@@ -195,12 +195,12 @@ button {
   width: min-content;
   max-width: 100%;
   margin: 0.4rem 0 0.85rem;
-  color: #ffe39a;
+  color: #f8e28d;
   text-shadow:
-    0 0 10px rgba(255, 227, 154, 0.72),
-    0 0 38px rgba(241, 199, 123, 0.42),
+    0 0 10px rgba(248, 226, 141, 0.78),
+    0 0 38px rgba(93, 220, 168, 0.34),
     0 18px 60px rgba(0, 0, 0, 0.7);
-  filter: drop-shadow(0 0 28px rgba(241, 199, 123, 0.24));
+  filter: drop-shadow(0 0 28px rgba(93, 220, 168, 0.2));
 }
 
 .million-display::before {
@@ -209,11 +209,11 @@ button {
   inset: 16% -3% 8%;
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(241, 199, 123, 0.22), rgba(101, 215, 192, 0.08)),
+    linear-gradient(90deg, rgba(248, 226, 141, 0.24), rgba(93, 220, 168, 0.12)),
     radial-gradient(circle at 18% 45%, rgba(255, 255, 255, 0.28), transparent 18%);
-  border: 1px solid rgba(241, 199, 123, 0.28);
+  border: 1px solid rgba(248, 226, 141, 0.3);
   transform: skewX(-8deg);
-  box-shadow: 0 28px 90px rgba(241, 199, 123, 0.18);
+  box-shadow: 0 28px 90px rgba(93, 220, 168, 0.16);
 }
 
 .money-symbol {
@@ -366,7 +366,7 @@ button {
     border-radius: 12px;
     background:
       linear-gradient(180deg, rgba(7, 11, 16, 0.58), rgba(7, 11, 16, 0.96)),
-      url("/static/blog-hero.png") center / cover;
+      url("/static/pound-hero.png") center / cover;
   }
 
   .million-display {

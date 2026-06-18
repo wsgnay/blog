@@ -8,7 +8,7 @@ description: AI learning notes and personal blog.
     <p class="eyebrow">AI Notes / Personal Blog</p>
     <p class="money-kicker">目标金额</p>
     <div class="million-display">
-      <span class="money-symbol">$</span>
+      <span class="money-symbol">£</span>
       <span class="money-number">1,000,000</span>
     </div>
     <h1>wsgnay</h1>
