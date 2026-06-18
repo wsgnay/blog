@@ -2,5 +2,23 @@
   "buildCommand": "npx quartz plugin install && npx quartz build",
   "outputDirectory": "public",
   "installCommand": "npm ci",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/agent-concepts",
+      "destination": "/agent-concepts.html"
+    },
+    {
+      "source": "/ai-image-job-map",
+      "destination": "/ai-image-job-map.html"
+    },
+    {
+      "source": "/mcp-basic-guide",
+      "destination": "/mcp-basic-guide.html"
+    },
+    {
+      "source": "/rag-workflow",
+      "destination": "/rag-workflow.html"
+    }
+  ]
 }
