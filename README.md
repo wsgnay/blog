@@ -13,5 +13,5 @@ npx quartz build --serve
 
 Import this repository into Vercel and use:
 
-- Build command: `npx quartz build`
+- Build command: `npm run build`
 - Output directory: `public`
