@@ -1,3 +1,317 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+:root {
+  --light: #070b10;
+  --lightgray: #17202b;
+  --gray: #657486;
+  --darkgray: #d9e4e8;
+  --dark: #f8fbf7;
+  --secondary: #65d7c0;
+  --tertiary: #f1c77b;
+  --highlight: rgba(101, 215, 192, 0.14);
+  --textHighlight: rgba(241, 199, 123, 0.24);
+}
+
+html {
+  background: #070b10;
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(101, 215, 192, 0.13), transparent 28rem),
+    radial-gradient(circle at 88% 18%, rgba(241, 199, 123, 0.1), transparent 26rem),
+    linear-gradient(180deg, #070b10 0%, #0b1118 48%, #080b10 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent 80%);
+}
+
+.page {
+  max-width: 1480px;
+}
+
+.page > #quartz-body .sidebar {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.page > #quartz-body .sidebar.left {
+  background: linear-gradient(180deg, rgba(11, 17, 24, 0.82), rgba(11, 17, 24, 0.28));
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+}
+
+.page-title a,
+.page-title {
+  color: var(--dark);
+  letter-spacing: 0;
+}
+
+.page-title::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 2px;
+  margin-top: 0.65rem;
+  background: linear-gradient(90deg, var(--secondary), transparent);
+}
+
+.center {
+  padding-top: 4.6rem;
+}
+
+article {
+  font-size: 1.02rem;
+  line-height: 1.78;
+}
+
+article h1,
+article h2,
+article h3 {
+  color: var(--dark);
+  letter-spacing: 0;
+}
+
+article h2 {
+  margin-top: 2.7rem;
+}
+
+article img {
+  border-radius: 10px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.26);
+}
+
+article blockquote {
+  border-left: 3px solid var(--secondary);
+  background: rgba(101, 215, 192, 0.07);
+  border-radius: 0 10px 10px 0;
+  padding: 0.85rem 1rem;
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
+
+a.internal,
+article a:not(.note-card) {
+  border-bottom: 1px solid rgba(101, 215, 192, 0.34);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(101, 215, 192, 0.35), transparent);
+}
+
+.search,
+.explorer,
+.graph,
+.toc,
+.backlinks {
+  color: var(--darkgray);
+}
+
+input,
+button {
+  border-radius: 8px;
+}
+
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 430px;
+  margin: -0.8rem 0 3rem;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: end;
+  padding: clamp(1.4rem, 4vw, 3rem);
+  background:
+    linear-gradient(90deg, rgba(7, 11, 16, 0.94) 0%, rgba(7, 11, 16, 0.68) 42%, rgba(7, 11, 16, 0.12) 100%),
+    url("/static/blog-hero.png") center / cover;
+  box-shadow: 0 32px 120px rgba(0, 0, 0, 0.4);
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, rgba(101, 215, 192, 0.2), transparent 38%);
+  mix-blend-mode: screen;
+}
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(101, 215, 192, 0.9), transparent);
+}
+
+.hero-copy {
+  max-width: 620px;
+  animation: hero-rise 720ms ease-out both;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--tertiary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1 {
+  margin: 0;
+  font-size: clamp(3.2rem, 11vw, 7.6rem);
+  line-height: 0.88;
+  color: #f8fbf7;
+  letter-spacing: 0;
+}
+
+.hero-lede {
+  max-width: 36rem;
+  margin: 1.2rem 0 0;
+  color: rgba(233, 243, 242, 0.82);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.6rem;
+}
+
+.hero-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 1rem;
+  border-radius: 999px;
+  color: #07100f;
+  background: var(--secondary);
+  box-shadow: 0 0 32px rgba(101, 215, 192, 0.24);
+}
+
+.hero-actions a + a {
+  color: var(--dark);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: none;
+}
+
+.note-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 2rem;
+}
+
+.note-card {
+  position: relative;
+  min-height: 150px;
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+    rgba(8, 12, 18, 0.72);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.note-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(101, 215, 192, 0.2), transparent 42%);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(101, 215, 192, 0.46);
+  background:
+    linear-gradient(145deg, rgba(101, 215, 192, 0.12), rgba(255, 255, 255, 0.035)),
+    rgba(8, 12, 18, 0.86);
+}
+
+.note-card:hover::before {
+  opacity: 1;
+}
+
+.note-card span,
+.note-card strong,
+.note-card em {
+  position: relative;
+  display: block;
+}
+
+.note-card span {
+  color: var(--tertiary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.note-card strong {
+  margin-top: 0.6rem;
+  color: var(--dark);
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+
+.note-card em {
+  margin-top: 0.65rem;
+  color: rgba(217, 228, 232, 0.72);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media all and ($mobile) {
+  .center {
+    padding-top: 1.4rem;
+  }
+
+  .home-hero {
+    min-height: 390px;
+    margin-top: 0;
+    border-radius: 12px;
+    background:
+      linear-gradient(180deg, rgba(7, 11, 16, 0.58), rgba(7, 11, 16, 0.96)),
+      url("/static/blog-hero.png") center / cover;
+  }
+
+  .note-grid {
+    grid-template-columns: 1fr;
+  }
+}
