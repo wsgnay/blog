@@ -6,6 +6,11 @@ description: AI learning notes and personal blog.
 <section class="home-hero">
   <div class="hero-copy">
     <p class="eyebrow">AI Notes / Personal Blog</p>
+    <p class="money-kicker">目标金额</p>
+    <div class="million-display">
+      <span class="money-symbol">$</span>
+      <span class="money-number">1,000,000</span>
+    </div>
     <h1>wsgnay</h1>
     <p class="hero-lede">把 AI Agent、RAG、MCP 和图像算法的学习路径整理成一座可持续生长的知识花园。</p>
     <div class="hero-actions">
